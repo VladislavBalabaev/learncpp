@@ -1,0 +1,32 @@
+#include <iostream>                                     // Line 1 - a preprocessor directive.
+/*
+"statement" -> ;
+
+"identiifier" - name of smth (variable, function, ...)
+
+in C++ indirect memory access is used through an "object" = region of memory that can store a value (so, we don't have to worry about where in memory those objects are actually being placed)
+
+"variable" = object + identifier.
+
+"instantiation" of an object - the object will be created and assigned a memory address while "runtime"
+"instance" - an instantiated object
+*/
+
+int x;                                                  // "definition", declaration?
+x = 1;                                                  // "assignment"
+
+// types of "initialization":
+int a;                                                  // default
+int b = 1;                                              // copy
+int c( 1 );                                             // direct - efficient initialization of complex objects
+int d { 1 };                                            // direct list (brace, uniform)
+int e = { 1 };                                          // copy list
+int f {};                                               // value
+/* preffered way - direct list or value initialization:
+1. disallows “narrowing conversions”: 'int {0.1}' is a error 
+2. supports initialization with lists of values
+
+Best practice - initialize your variables upon creation.
+*/
+
+[[maybe_unused]] int y { 2 };                           // to avoid compile error of unused variable.
