@@ -12,6 +12,10 @@ out of scope -> variable’s lifetime ends;; not all types of variables are dest
 "definition" - declaration that actually implements (for functions and types) or instantiates (for variables) the identifier. [In C++, all definitions are declarations.]
 "pure declarations" - declarations that aren’t definitions are called.
 "initialization" - provides an initial value for a defined object.
+
+
+"preprocessor" makes various changes to the text of the code file. [replaces the #include directive with the contents of the included file, ...]
+"translation" -  entire process of preprocessing, linking, compiling.
 */
 
 
