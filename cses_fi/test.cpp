@@ -1,6 +1,30 @@
 #include <bits/stdc++.h>
 
+#define REP(i,a,b) for (int i = a; i <= b; i++)
+
 using namespace std;
+
+
+// to shorten the code: type names (typedef) & macros (#define)
+typedef long long ll;
+ll a = 1;
+
+void macros(int i, int n) {
+    REP(i, 1, n) {
+        //
+    }
+}
+
+
+
+
+double equality(double a, double b, double precision) {
+    if (abs(a - b) < precision) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 int main() {
