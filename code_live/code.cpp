@@ -143,12 +143,16 @@ void pointer() {
 void passByRef(const std::vector<int>& arr) {} // to avoid expensive copy to the parameter we use const
 
 void vectors() {
-    // homogenous container is a data type that provides storage for a collection of homogenous unnamed objects
-    // C++ supports only homogenous containters, python also supports heterogenous containters
-    // “pseudo-containers”: C-style arrays, std::string, std::vector<bool>
+    /*
+    homogenous container is a data type that provides storage for a collection of homogenous unnamed objects
+     C++ supports only homogenous containters, python also supports heterogenous containters
+    “pseudo-containers”: C-style arrays, std::string, std::vector<bool>
+    
+    "size_type" (defaults to std::size_t) used as the type for the length and indices of the container class.
+    */
 
     std::vector<int> empty_vector{};
-    std::vector<char> alphabet{ 'a', 'b', 'c' };
+    std::vector<char> alphabet{ 'a', 'b', 'c' };        // "initializer list"
 
     std::vector<int> ten_zeros(10);                     // "single-valued constructor"
 
@@ -156,6 +160,10 @@ void vectors() {
     // ERROR: std::vector<const int> prime { 2, 3, 5 }; - elements of a non-const std::vector must be non-const
 
     passByRef(ten_zeros);
+
+    std::cout << prime[0]                               // subscription
+
+
 }
 
 

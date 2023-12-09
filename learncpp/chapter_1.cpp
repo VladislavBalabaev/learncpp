@@ -23,6 +23,8 @@ for example - uninitialized variable
 Literals are values that are inserted directly into the source code.
 
 expression & evaluation & result
+
+
 */
 
 
@@ -37,12 +39,19 @@ int main() {                                                // returns integer; 
     int d{ 1 };                                             // direct list (brace, uniform)
     int e = { 1 };                                          // copy list
     int f{ };                                               // value
-    /* preffered way - direct list or value initialization:
-    1. disallows “narrowing conversions”: 'int {0.1}' is a error 
+    /* 
+    "narrowing conversion" - unsafe numeric conversion where the destination type may not be able to hold all the values of the source type.
+
+    preffered way - direct list or value initialization:
+    1. disallows narrowing conversions: 'int {0.1}' is a error 
     2. supports initialization with lists of values
 
     Best practice - initialize your variables upon creation.
     */
+
+    // Make intentional narrowing conversions explicit:
+    double a{ 1.0 };
+    std::cout << static_cast<int>(a);
 
     [[maybe_unused]] int y { 2 };                           // to avoid compile error of unused variable.
 
