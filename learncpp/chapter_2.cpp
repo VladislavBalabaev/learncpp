@@ -10,7 +10,7 @@ out of scope -> variable’s lifetime ends;; not all types of variables are dest
 
 "declaration" - existence of an identifier and its associated type information.
 "definition" - declaration that actually implements (for functions and types) or instantiates (for variables) the identifier. [In C++, all definitions are declarations.]
-"pure declarations" - declarations that aren’t definitions are called.
+"pure declarations" - declarations that aren’t definitions.
 "initialization" - provides an initial value for a defined object.
 
 

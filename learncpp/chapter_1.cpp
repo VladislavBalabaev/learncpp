@@ -11,7 +11,7 @@ in C++ indirect memory access is used through an "object" = region of memory tha
 "variable" = object + identifier.
 
 
-C++ is statically typed language (when declaring a variable we have to specify type and this type cannot change)
+C++ is statically typed language (when declaring a variable we have to specify type that cannot be changed)
 
 "instantiation" of an object - the object will be created and assigned a memory address while "runtime"
 "instance" - an instantiated object
@@ -26,7 +26,7 @@ expression & evaluation & result
 */
 
 
-int main() {                                                // returns integer; random if smth goes wrond
+int main() {                                                // returns integer; random if smth goes wrong
     int x;                                                  // "definition"
     x = 1;                                                  // "assignment"
 
@@ -34,7 +34,7 @@ int main() {                                                // returns integer; 
     int a;                                                  // default
     int b = 1;                                              // copy
     int c( 1 );                                             // direct - efficient initialization of complex objects
-    int d{ 1 };                                            // direct list (brace, uniform)
+    int d{ 1 };                                             // direct list (brace, uniform)
     int e = { 1 };                                          // copy list
     int f{ };                                               // value
     /* preffered way - direct list or value initialization:
