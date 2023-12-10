@@ -147,8 +147,6 @@ void vectors() {
     homogenous container is a data type that provides storage for a collection of homogenous unnamed objects
      C++ supports only homogenous containters, python also supports heterogenous containters
     “pseudo-containers”: C-style arrays, std::string, std::vector<bool>
-    
-    "size_type" (defaults to std::size_t) used as the type for the length and indices of the container class.
     */
 
     std::vector<int> empty_vector{};
@@ -161,7 +159,11 @@ void vectors() {
 
     passByRef(ten_zeros);
 
-    std::cout << prime[0]                               // subscription
+    std::cout << prime[0];                              // subscription "operator[]" does no bounds checking; prime.at(0) does
+
+
+    int length { static_cast<int>(prime.size()) };      // "size_type" (defaults to std::size_t) used as the type for the length and indices of the container class.
+
 
 
 }
