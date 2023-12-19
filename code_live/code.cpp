@@ -140,13 +140,25 @@ void pointer() {
 
 
 
-void passByRef(const std::vector<int>& arr) {} // to avoid expensive copy to the parameter we use const
+
+std::vector<int> passByRef(const std::vector<int>& arr) {   // to avoid expensive copy to the parameter we reference by const
+    std::vector arr1 { 1, 2, 3 };
+    return arr1;                                            // return by value
+}
+
+template <typename T>
+T templatePassByRef(const std::vector<T>& arr) {            // "template parameter declaration": allows the caller to specify the element type
+    return arr
+}
+// OR (to do the same)
+// void autoPassByRef(const auto& arr) {}                   // abbreviated function template (c++ 2020+)
+
 
 void vectors() {
     /*
-    homogenous container is a data type that provides storage for a collection of homogenous unnamed objects
-     C++ supports only homogenous containters, python also supports heterogenous containters
-    “pseudo-containers”: C-style arrays, std::string, std::vector<bool>
+    homogenous container is a data type that provides storage for a collection of homogenous unnamed objects.
+    C++ supports only homogenous containters, python also supports heterogenous containters.
+    “pseudo-containers”: C-style arrays, std::string, std::vector<bool>.
     */
 
     std::vector<int> empty_vector{};
@@ -157,13 +169,22 @@ void vectors() {
     const std::vector<int> prime{ 2, 3, 5 };
     // ERROR: std::vector<const int> prime { 2, 3, 5 }; - elements of a non-const std::vector must be non-const
 
-    passByRef(ten_zeros);
-
     std::cout << prime[0];                              // subscription "operator[]" does no bounds checking; prime.at(0) does
-
 
     int length { static_cast<int>(prime.size()) };      // "size_type" (defaults to std::size_t) used as the type for the length and indices of the container class.
 
+
+    std::vector arr1 { 1, 2, 3 };
+    std::vector arr2 { arr1 };                          // "copy semantics" - expensive copy of temporary variable (that will be destroyed)
+
+    std::vector<int> smth_arr { passByRef(ten_zeros) }; // "move semantics" - moves the value instead of copying and destroying (extremely faster)
+
+
+    int average { 0 };
+    for (std::size_t index{ 0 }; index < length; ++index) {     // "traversing" or "iterating over"
+        average += prime[index];
+        }
+    average /= static_cast<int>(length);
 
 
 }
