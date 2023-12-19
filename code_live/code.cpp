@@ -181,12 +181,16 @@ void vectors() {
 
 
     int average { 0 };
-    for (std::size_t index{ 0 }; index < length; ++index) {     // "traversing" or "iterating over"
-        average += prime[index];
+    for (std::size_t index{ 0 }; index < length; ++index) {     // regular for loop
+        average += prime[index];                                // "traversing" or "iterating over"
         }
     average /= static_cast<int>(length);
 
-
+    for (int arr_value : arr1) {                              // range-based for loop / for-each loop
+        average += prime[arr_value];
+        }
+    // BEST PRACTICE: favor range-based when traversing containers.
+    
 }
 
 
