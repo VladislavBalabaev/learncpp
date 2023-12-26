@@ -18,12 +18,27 @@ void macros(int i, int n) {
 
 
 
-double equality(double a, double b, double precision) {
+bool equality(double a, double b, double precision) {
     if (abs(a - b) < precision) {
         return true;
     } else {
         return false;
     }
+}
+
+
+int faulhabers_formula(int a, int b, int n) {
+    return n * (a + b) / 2;
+}
+
+
+int geometric_progression(int a, int b, int k) {
+    return (b * k - a) / (k - 1);
+}
+
+
+int binets_formula(int n) {
+    return ((1 + 5 ^ (1 / 2)) ^ (n) - (1 + 5 ^ (1 / 2)) ^ (n)) / (2 ^ (n) * 5 ^ (1 / 2));
 }
 
 
