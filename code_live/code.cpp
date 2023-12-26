@@ -186,11 +186,14 @@ void vectors() {
         }
     average /= static_cast<int>(length);
 
-    for (int arr_value : arr1) {                              // range-based for loop / for-each loop
+    for (const auto& arr_value : arr1) {                              // range-based for loop / for-each loop
         average += prime[arr_value];
         }
-    // BEST PRACTICE: favor range-based when traversing containers.
-    
+    /* BEST PRACTICE: 
+    1) favor range-based when traversing containers.
+    2) const & - avoid making a copy; reference the actual array element (unless you need to work with copies)
+    3) auto
+    */
 }
 
 
