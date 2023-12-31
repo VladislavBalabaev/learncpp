@@ -110,32 +110,32 @@ void array() {
 
 
 void pointer() {
-    // * - dereference, to get value from memory address
-    // & - address-of, to get the memory address itself; will return the memory address of the first byte used by the object.
-    // new - memory allocation
-    // delete - release allocated memory
+    // A "pointer" - variable which value happens to be an address in integer representation.
 
-    // A "pointer" is an object that holds a memory address (typically of another variable) as its value.
+    float z = 4;
+    float * pz = &z;                                      // float * - pointer to a float; it is not float itself, pointer is always intk
+    float y = *pz;                                        // (without type) * - dereference, to get value from memory address
 
-    int *a = new int;
+
+    int * a = new int;                                  // new - memory allocation
     *a = 1;
 
-    int *b = new int(1);
+    int * b = new int(1);
 
     *b = *a + *b;
 
     std::cout << *a;
-    std::cout << "address of b is " << &b << '\n';
+    std::cout << "address of b is " << &b << '\n';      // & - address-of, to get the memory address itself; will return the memory address of the first byte used by the object.
 
-    delete a;
+    delete a;                                           // delete - release allocated memory
     delete b;
 
 
     int x { 5 };                                        // normal variable
-    int& ref { x };                                     // a reference to an integer (bound to x)
-    int* ptrx{ &x };                                    // a pointer initialized with the address of variable x
+    int & ref { x };                                    // a reference to an integer (bound to x)
+    int * ptrx { &x };                                  // a pointer initialized with the address of variable x
 
-    int* ptr;                                           // an uninitialized pointer (holds a garbage address)
+    int * ptr;                                          // an uninitialized pointer (holds a garbage address)
 }
 
 
@@ -187,7 +187,7 @@ void vectors() {
     average /= static_cast<int>(length);
 
     for (const auto& arr_value : arr1) {                              // range-based for loop / for-each loop
-        average += prime[arr_value];
+        average += arr_value;
         }
     /* BEST PRACTICE: 
     1) favor range-based when traversing containers.
