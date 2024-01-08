@@ -96,6 +96,9 @@ void array() {
     std::cout << &(primes[2]) << '\n';  // 00DBF728
 
 
+    int* nullarray[10] = { NULL };
+
+
     // dynamic creation of array:
     int num;
     std::cin >> num;
