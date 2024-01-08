@@ -108,7 +108,7 @@ void array() {
     delete [] p_darr;
 }
 
-
+    
 void pointer() {
     // A "pointer" - variable which value happens to be an address in integer representation.
 
